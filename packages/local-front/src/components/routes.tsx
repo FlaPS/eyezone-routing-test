@@ -30,6 +30,7 @@ const routes =  [
 ]
 
 export default routes
+    // @ts-ignore
     .map(({ Component, nav, exact = true }) => (
         <Route
 

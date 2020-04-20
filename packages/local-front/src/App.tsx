@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect, Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import { ConnectedRouter, history  } from '@sha/router'
 import { HistoryContext, useSubscribe } from './contexts'
 import DesktopRoot from './components/DesktopRoot'

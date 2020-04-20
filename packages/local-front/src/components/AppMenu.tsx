@@ -27,7 +27,7 @@ export default ({history}) => {
                     <BarsOutlined />
                     News
                 </Menu.Item>
-                <Menu.Item key={'/profile'}>
+                <Menu.Item key={loggedIn ? '/profile' : '/login'}>
                     <UserOutlined />
                     Profile {loggedIn ? ' LoggedIn !' : null}
                 </Menu.Item>

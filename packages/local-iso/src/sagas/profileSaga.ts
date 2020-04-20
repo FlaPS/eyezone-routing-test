@@ -10,7 +10,6 @@ export function* profileSaga() {
 function* checkLogin(action) {
     const state: ClientState = yield select()
     const loginState = state.eyezon.login
-
     if(
         loginState.status !== 'done'
     ) {

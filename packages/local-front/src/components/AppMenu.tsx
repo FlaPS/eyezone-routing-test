@@ -4,12 +4,11 @@ import { UserOutlined, BarsOutlined, HomeOutlined, } from '@ant-design/icons'
 import {useDispatch, useSelector} from 'react-redux'
 import {ClientState} from 'local-iso/src/configureClientStore'
 
-
 export default ({history}) => {
     const location = useSelector((state: ClientState) => state.router.location)
 
     const loggedIn = useSelector((state: ClientState) => state.eyezon.login.status === 'done')
-    
+
     const handleItemClick = e =>
         history.push(e.key)
 

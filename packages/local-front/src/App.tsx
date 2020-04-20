@@ -6,16 +6,13 @@ import DesktopRoot from './components/DesktopRoot'
 
 const App = ({store}) => {
     return (
-
-                    <Provider store={store}>
-                        <HistoryContext.Provider value={history}>
-                            <ConnectedRouter history={useSubscribe(HistoryContext)}>
-
-                                <DesktopRoot />
-
-                            </ConnectedRouter>
-                        </HistoryContext.Provider>
-                    </Provider>
+        <Provider store={store}>
+            <HistoryContext.Provider value={history}>
+                <ConnectedRouter history={useSubscribe(HistoryContext)}>
+                    <DesktopRoot />
+                </ConnectedRouter>
+            </HistoryContext.Provider>
+        </Provider>
     )
 }
 

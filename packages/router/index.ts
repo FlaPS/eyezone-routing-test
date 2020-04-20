@@ -3,10 +3,14 @@ export * from 'react-router'
 import {LOCATION_CHANGE, RouterActionType} from 'connected-react-router'
 import * as RR from 'connected-react-router'
 export {connectRouter, RouterState,RouterRootState, routerMiddleware, ConnectedRouter} from 'connected-react-router'
-import { createBrowserHistory, createMemoryHistory } from 'history'
+import { createBrowserHistory, createMemoryHistory, History } from 'history'
 import {isBrowser} from '@sha/utils'
 import { ActionCreator, FactoryAnyAction } from '@sha/fsa'
 import { put, takeLatest, select } from 'redux-saga/effects'
+
+export {
+    History
+}
 
 export const history = isBrowser()
     ? createBrowserHistory()

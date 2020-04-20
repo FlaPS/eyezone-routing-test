@@ -1,9 +1,13 @@
 import fastify from 'fastify'
+import {EyezonLoginPayload, EyezonLoginResult} from 'local-iso/src/ducks/eyezonDuck'
 
 const server = fastify()
-server.post('/api/login', async (request, reply) => {
-    const {login, password} = JSON.parse(request.body)
-    console.log(request.body)
+server.post('/api/login', async (request, reply): Promise<EyezonLoginResult> => {
+
+    const {login, password}: EyezonLoginPayload = JSON.parse(request.body)
+
+    request.log.debug('Login request', request.body)
+
     if(login === 'Admin' && password == '12345')
         return {authorized: 'Ok'}
 

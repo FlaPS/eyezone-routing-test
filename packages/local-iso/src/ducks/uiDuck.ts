@@ -27,7 +27,7 @@ const reducer = combineReducers({
 })
 
 
-export const uiDuck = {
+export default {
     actions,
     reducer,
     isBusy: (state: {ui: UIState}) =>

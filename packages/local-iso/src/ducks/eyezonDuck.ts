@@ -3,7 +3,7 @@ import {combineReducers} from 'redux'
 const factory = fsa.actionCreatorFactory('eyezon')
 
 const actions = {
-    login: factory.async<{login: string, password: string}, boolean>('login'),
+    login: factory.async<EyezonLoginPayload, EyezonLoginResult>('login'),
 }
 
 const reducer = combineReducers({
@@ -11,6 +11,13 @@ const reducer = combineReducers({
 })
 
 export type EyezonState = ReturnType<typeof reducer>
+
+export type EyezonLoginPayload = {
+    login: string
+    password: string
+}
+
+export type EyezonLoginResult = any
 
 export default {
     reducer,

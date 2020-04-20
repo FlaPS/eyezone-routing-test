@@ -7,9 +7,8 @@ import {eyezonSaga} from 'local-iso/src/sagas'
 const div = document.getElementById('root') as HTMLDivElement
 
 const store = configureClientStore()
-store.runSaga(eyezonSaga)
 
-window['redux'] = store
+store.runSaga(eyezonSaga)
 
 ReactDOM.render(
     React.createElement(App, {store}),

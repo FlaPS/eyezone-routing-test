@@ -2,7 +2,8 @@ import { take, put, fork, takeLatest, call } from "redux-saga/effects";
 import {eyezonDuck} from '../index'
 import {push} from '@sha/router'
 import nav from '../nav'
-import {uiDuck} from '../ducks/uiDuck'
+import uiDuck from '../ducks/uiDuck'
+import {EyezonLoginPayload, EyezonLoginResult} from '../ducks/eyezonDuck'
 
 
 export function* loginSaga() {
@@ -13,11 +14,12 @@ export function* loginSaga() {
     }
 }
 
-const loginApi = (data) =>
+const loginApi = (data: EyezonLoginPayload): Promise<EyezonLoginResult> =>
     fetch('/api/login', {method: 'POST', body: JSON.stringify(data)})
         .then(response => response.json())
 
-function* handleLogin({payload}) {
+function* handleLogin({payload}: ReturnType<typeof eyezonDuck.actions.login.started>) {
+    console.log('Login with creds:', payload.login, payload.password)
 
     yield put(uiDuck.actions.busy('login'))
     try {

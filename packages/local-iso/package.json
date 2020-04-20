@@ -1,0 +1,9 @@
+{
+  "name": "local-iso",
+  "version": "0.1.0",
+  "dependencies": {
+    "@sha/fsa": "0.1.0",
+    "@sha/router": "0.1.0",
+    "@sha/utils": "0.1.0"
+  }
+}

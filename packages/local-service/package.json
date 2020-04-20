@@ -1,0 +1,12 @@
+{
+  "name": "local-service",
+  "version": "0.1.0",
+  "dependencies": {
+    "local-iso": "0.1.0"
+  },
+  "scripts": {
+    "start": "ts-node-dev --transpileOnly  ./src/index.ts",
+    "stage": "node -r ts-node/register/transpile-only ./src/index.ts",
+    "prod": "node -r ts-node/register/transpile-only ./src/index.ts"
+  }
+}
